@@ -1,16 +1,19 @@
+// Coffee : price_1M9yiSJlyqEYKjmZYp3mHQ1Q
+// Tea : price_1M9yo7JlyqEYKjmZ1ihcuJbD
+// Milk : price_1M9ypMJlyqEYKjmZisjS5y7g
 const productsArray = [
     {
-        id:1,
+        id:'price_1M9yo7JlyqEYKjmZ1ihcuJbD',
         title:'tea',
         price:1.5,
     },
     {
-        id:2,
+        id:'price_1M9yiSJlyqEYKjmZYp3mHQ1Q',
         title:'coffee',
         price:3.5,
     },
     {
-        id:3,
+        id:'price_1M9ypMJlyqEYKjmZisjS5y7g',
         title:'milk',
         price:1.25,
     },
