@@ -1,8 +1,12 @@
 import React from 'react'
-import {Button, Container, Navbar, Modal} from 'react-bootstrap'
+import {Navbar, Modal} from 'react-bootstrap'
 import {useState, useContext} from 'react';
 import {CartContext} from '../CartContext'
 import CartProducts from './CartProducts';
+import {RiShoppingBasket2Line} from 'react-icons/ri';
+import {BiUser} from 'react-icons/bi';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 
 function NavBar() {
   const [show, setShow] = useState(false);
@@ -28,11 +32,37 @@ function NavBar() {
   return (
     <>
       <Navbar expand="sm">
-          <Navbar.Brand href='/'>E-commerce store</Navbar.Brand>
+          <Navbar.Brand href='/'>KAÇIRILDIN STORE</Navbar.Brand>
           <Navbar.Toggle/>
-          <Navbar.Collapse className='justify-content-end'>
-              <Button onClick={handleShow}>Cart {(productsCount)} Items</Button>
-          </Navbar.Collapse>
+          <Stack spacing={2} 
+          direction="row"
+          sx={
+            {justifyContent:'end'}
+          }>
+            <Button variant="outlined"
+              sx={
+                {
+                  borderColor:'secondary.main', 
+                  color:'secondary.main',
+                  justifyContent:'end'
+                }}>
+                <BiUser/> &nbsp;Login 
+              </Button>
+              <Button variant="contained"
+                sx={
+                  {
+                    backgroundColor:'secondary.main',
+                    justifyContent:'end'
+                  }}
+                onClick={handleShow}>
+                <RiShoppingBasket2Line/> &nbsp; {(productsCount)} Items
+              </Button>
+          </Stack>
+          {/* <Navbar.Collapse className='justify-content-end'>
+              <Button variant="contained" onClick={handleShow}>
+                <RiShoppingBasket2Line/> 
+              </Button>
+          </Navbar.Collapse> */}
       </Navbar>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -55,7 +85,7 @@ function NavBar() {
               </Button>
             </>
             :
-            <h1>This is the modal body!</h1>
+            <h2>You have nothing in the cart!</h2>
           }
           
         </Modal.Body>
